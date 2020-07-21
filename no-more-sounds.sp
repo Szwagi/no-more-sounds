@@ -48,7 +48,7 @@ public void OnPluginStart()
     g_cv_footstepsServerside = FindConVar("mp_footsteps_serverside");
     g_cv_advertise = CreateConVar("sm_nms_advertise", "0", "Advertise No More Sounds in chat (every 5 minutes)");
 
-    CreateTimer(60.0 * 5.0, Timer_Advertise, 0, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
+    CreateTimer(60.0 * 5.0, Timer_Advertise, 0, TIMER_REPEAT);
 
     AddNormalSoundHook(Hook_NormalSound);
     AddTempEntHook("Shotgun Shot", Hook_ShotgunShot);
