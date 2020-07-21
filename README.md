@@ -1,12 +1,12 @@
 # No More Sounds
 
-SourceMod plugin for use alongside KZTimer or GOKZ. 
+SourceMod plugin for use alongside KZTimer. 
 
 ### Features:
 - Mute map music
 - Mute gunshot sounds
 - Mute other player footsteps (only when `mp_footsteps_serverside` is 1)
-- Volume control for checkpoint/teleport sound
+- Control volume of checkpoint/teleport sound
 
 ### Commands:
 - `!nms` / `!soundoptions` - opens options menu
