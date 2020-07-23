@@ -150,7 +150,7 @@ Action Hook_NormalSound(int clients[MAXPLAYERS], int& numClients, char sample[PL
     }
 
     // Footsteps
-    if (g_cv_footstepsServerside.BoolValue && numClients != 1)
+    if (g_cv_footstepsServerside.BoolValue)
     {
         if (StrContains(sample, "/footsteps/") >= 0)
         {
@@ -293,4 +293,3 @@ Action Command_Options(int client, int argc)
     DisplayOptionsMenu(client);
     return Plugin_Handled;
 }
-
