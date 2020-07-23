@@ -15,5 +15,5 @@ SourceMod plugin for use alongside KZTimer or GOKZ.
 - `sm_nms_advertise` (default 0) - enables advertisement of the plugin in chat
 
 ### Notes:
-- `mp_footsteps_serverside` is being set by KZTimer in `/cfg/sourcemod/kztimer/main.cfg` and by GOKZ in `/cfg/sourcemod/gokz/gokz.cfg`
+- `mp_footsteps_serverside` will be overwritten in `/cfg/sourcemod/kztimer/main.cfg` (KZTimer) or `/cfg/sourcemod/gokz/gokz.cfg` (GOKZ)
 - You can set `sv_falldamage_scale` to 0 to remove falldamage sound on your server
