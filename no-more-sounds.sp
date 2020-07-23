@@ -8,7 +8,7 @@ public Plugin myinfo =
 {
 	name = "No More Sounds",
 	author = "Szwagi",
-	version = "1.0.0",
+	version = "v1.0.0",
 	url = "https://github.com/Szwagi/no-more-sounds"
 };
 
