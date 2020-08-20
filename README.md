@@ -1,6 +1,6 @@
 # No More Sounds
 
-SourceMod plugin for use alongside KZTimer. 
+SourceMod plugin for use alongside KZTimer or GOKZ. 
 
 ### Features:
 - Mute map music
@@ -14,3 +14,6 @@ SourceMod plugin for use alongside KZTimer.
 ### ConVars:
 - `sm_nms_advertise` (default 0) - enables advertisement of the plugin in chat
 
+### Notes:
+- `mp_footsteps_serverside` has to be set in `/cfg/sourcemod/kztimer/main.cfg` or `/cfg/sourcemod/gokz/gokz.cfg`
+- You can set `sv_falldamage_scale` to 0 to remove falldamage sound on your server
