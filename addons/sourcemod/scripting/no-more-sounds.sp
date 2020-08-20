@@ -8,7 +8,7 @@ public Plugin myinfo =
 {
 	name = "No More Sounds",
 	author = "Szwagi",
-	version = "1.0.0",
+	version = "v1.0.1",
 	url = "https://github.com/Szwagi/no-more-sounds"
 };
 
@@ -48,7 +48,7 @@ public void OnPluginStart()
     g_cv_footstepsServerside = FindConVar("mp_footsteps_serverside");
     g_cv_advertise = CreateConVar("sm_nms_advertise", "0", "Advertise No More Sounds in chat (every 5 minutes)");
 
-    CreateTimer(60.0 * 5.0, Timer_Advertise, 0, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
+    CreateTimer(60.0 * 5.0, Timer_Advertise, 0, TIMER_REPEAT);
 
     AddNormalSoundHook(Hook_NormalSound);
     AddTempEntHook("Shotgun Shot", Hook_ShotgunShot);
@@ -116,7 +116,7 @@ public void OnClientCookiesCached(int client)
 
 public void OnPlayerRunCmdPost(int client)
 {
-    if (!g_mapMusic[client])
+    if (IsValidClient(client) && !g_mapMusic[client])
     {
         SetEntProp(client, Prop_Data, "soundscapeIndex", 0);
     }
@@ -150,7 +150,7 @@ Action Hook_NormalSound(int clients[MAXPLAYERS], int& numClients, char sample[PL
     }
 
     // Footsteps
-    if (g_cv_footstepsServerside.BoolValue && numClients != 1)
+    if (g_cv_footstepsServerside.BoolValue)
     {
         if (StrContains(sample, "/footsteps/") >= 0)
         {
@@ -213,6 +213,11 @@ Action Hook_ShotgunShot(const char[] tename, const int[] clients, int numClients
 }
 
 // ================================================
+
+bool IsValidClient(int client)
+{
+    return client >= 1 && client <= MaxClients && IsClientInGame(client);
+}
 
 void DisplayOptionsMenu(int client)
 {
@@ -293,4 +298,3 @@ Action Command_Options(int client, int argc)
     DisplayOptionsMenu(client);
     return Plugin_Handled;
 }
-
