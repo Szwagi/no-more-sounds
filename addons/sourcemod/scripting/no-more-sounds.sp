@@ -55,6 +55,11 @@ public void OnPluginStart()
 
     RegConsoleCmd("sm_nms", Command_Options);
     RegConsoleCmd("sm_soundoptions", Command_Options);
+    RegConsoleCmd("sm_stopsound", Command_Options);
+    RegConsoleCmd("sm_mapmusic", Command_Options);
+    RegConsoleCmd("sm_stopmapmusic", Command_Options);
+    RegConsoleCmd("sm_stopmusic", Command_Options);
+    RegConsoleCmd("sm_music", Command_Options);
 }
 
 public void OnClientConnected(int client)
